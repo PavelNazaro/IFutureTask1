@@ -1,8 +1,25 @@
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
+<?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<GridPane fx:controller="sample.Controller"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
-</GridPane>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <TextField fx:id="textFieldFolderPath" layoutX="270.0" layoutY="33.0" prefHeight="26.0" prefWidth="207.0" />
+      <TextField fx:id="textFieldSearchText" layoutX="270.0" layoutY="81.0" onKeyPressed="#onKeyPressed" prefHeight="26.0" prefWidth="416.0" />
+      <TextField fx:id="textFieldFileExtension" layoutX="515.0" layoutY="33.0" text=".log" />
+      <Label layoutX="270.0" layoutY="14.0" text="Enter folder path:" />
+      <Label layoutX="270.0" layoutY="65.0" text="Enter your search text:" />
+      <Label layoutX="515.0" layoutY="14.0" text="Enter file extension:" />
+      <Button fx:id="buttonChooseFolder" layoutX="138.0" layoutY="35.0" mnemonicParsing="false" onAction="#clickButtonChooseFolder" prefHeight="49.0" prefWidth="108.0" text="Choose folder" />
+      <Button fx:id="buttonSearch" layoutX="8.0" layoutY="35.0" mnemonicParsing="false" onAction="#clickButtonSearch" prefHeight="49.0" prefWidth="108.0" text="Search" />
+      <TreeView fx:id="treeViewFolders" layoutX="8.0" layoutY="121.0" onMouseClicked="#clickTreeView" prefHeight="472.0" prefWidth="238.0" />
+      <TabPane fx:id="tabPane" layoutX="270.0" layoutY="121.0" maxWidth="416.0" tabClosingPolicy="ALL_TABS" />
+      <Label fx:id="labelSearchInProgress" layoutX="297.0" layoutY="160.0" text="Search in progress..." textFill="RED">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
